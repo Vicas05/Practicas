@@ -1,0 +1,96 @@
+---
+author: Victoria Arana Castillo
+date: Mayo 2026
+format: html
+---
+
+## Mapa de predicciones 
+
+El objetivo de este análisis es visualizar la distribución de global de las PETasas y compararla con las predicciones de generadas por el modelo XGBoost.
+
+El mapa incluye:
+
+-   Puntos azules: conjunto completo de PETasas identificadas (\~1300 secuencias)
+
+-   Puntos amarillos: PETasas asiganadas como extremas
+
+-   Puntos naranjas: PETasas asignadas como extremotolerantes
+
+-   Puntos rojos: PETasas asiganadas como termófilas
+
+-   Círculo rojo: predicciones del modelo XGBoost
+
+La integración de todas las PETasas junto con las predicciones del modelo se realizó previamente en Python durante el flujo de análisis de XGBoost. Por tanto, el archivo de entrada utilizado en este script ya contiene toda la información necesaria para la generación del mapa, incluyendo:
+
+-   Conjunto completo de PETasas
+
+-   PETasas termófilas anotadas experimentalmente
+
+-   PETasas predichas como termófilas por el modelo
+
+```{r}
+# librerias
+
+library(readxl)
+library(sf) #datos espaciales 
+library(rworldmap)
+library(ggplot2)
+```
+
+```{r}
+# cargamos la tabla con las predicciones
+PETasas_totales <- read_excel("C:/Users/HP/OneDrive/Escritorio/Practicas_pLMs/PETasas_totales_con_predicciones.xlsx")
+
+# cargamos un dataframe con las coordenadas del mundo (ggplot2)
+world <- map_data("world")
+
+```
+
+Creamos el mapa:
+
+```{r}
+mapa <- ggplot() +
+    
+    # Dibujamos el fondo del mapa mundi
+    geom_polygon(data = world, aes(x = long, y = lat, group = group), fill = "grey80", color = "white") +
+    
+    # Dibujamos todas las PETasas 
+    geom_point(data = PETasas_totales, aes(x = Longitude, y = Latitude, color = "PETasas Totales"), alpha = 0.3, size = 1, na.rm = TRUE) +
+    
+    # Dibujamos las PETasas Extremas
+    geom_point(data = subset(PETasas_totales, true_extreme_environment == "extreme"), aes(x = Longitude, y = Latitude, 
+              color = "PETasas Extremas"), alpha = 0.5, size = 2, na.rm = TRUE) +
+    # Dibujamos las PETasas Extremas
+    geom_point(data = subset(PETasas_totales, true_extreme_environment == "moderate extreme"), aes(x = Longitude, y = Latitude, 
+              color = "PETasas Extremotolerantes"), alpha = 0.5, size = 2, na.rm = TRUE) +
+    
+    # Dibujamos las PETasas Termófilas 
+    geom_point(data = subset(PETasas_totales, type_env_extr == "thermophile, piezophile" | type_env_extr == "thermophile, alkalophile" 
+              | type_env_extr == "thermophile"), 
+               aes(x = Longitude, y = Latitude, color = "PETasas Termófilas"), alpha = 0.5, size = 2, na.rm = TRUE) +
+    
+    # Superponemos las predicciones del modelo
+    geom_point(data = subset(PETasas_totales, prediccion == 1), aes(x = Longitude, y = Latitude,  color = "Predicciones del modelo"), 
+               size = 3.5, shape = 1, stroke = 1.5) +
+    
+    # Leyenda
+    scale_color_manual(name = "Leyenda",
+                       values = c("PETasas Totales" = "steelblue", 
+                                  "PETasas Extremas" = "yellow",
+                                  "PETasas Extremotolerantes" = "orange",
+                                  "PETasas Termófilas" = "red",
+                                  "Predicciones del modelo" = "darkred")) + 
+    
+    theme_minimal() + 
+    theme(legend.position = "right", plot.title = element_text(face = "bold", size = 14)) +
+    labs(title = "Distribución Global de PETasas y Predicciones Termófilas", 
+         x = "Longitud", y = "Latitud")
+
+print(mapa)
+
+```
+
+```{r}
+ggsave(filename = "C:/Users/HP/OneDrive/Escritorio/Practicas_pLMs/mapa_predicciones.png", plot = mapa, width = 12, height = 8, dpi = 300)
+
+```
