@@ -50,7 +50,7 @@ Las etapas realizadas en este proyecto fueron:
 │           PETases_kmers_uniprot.xlsx
 │           progreso_grid_search.csv
 │           uniprotkb_PETases.xlsx
-└───3_Analisis_Estructural
+└───3_Analisis_Estructural         # Resultados del análisis estructural en AlphaFold
     ├───Actinomadura_craniellae    # Candidato Termófilo
     │   └───resultados
     ├───Herbidospora_galbida       # Candidato Termófilo
@@ -59,7 +59,7 @@ Las etapas realizadas en este proyecto fueron:
     │   └───resultados
     ├───Thermobifida_halotolerans  # Candidato Termófilo
     │   └───resultados
-    └───_figuras                   # Figuras generadas en la comparactiva estructural
+    └───_figuras                   # Figuras generadas en la comparactiva estructural mediante TM-align
             comp_prot1.png
             comp_prot2.png
             comp_prot3.png
@@ -68,12 +68,15 @@ Las etapas realizadas en este proyecto fueron:
 ---
 
 ## Herramientas y entornos
-Este trabajo se ha realizado principalmente en Python (v3.10) utilizando entornos de Jupyter Notebook. El mapa de predicciones se realizó en R (v4.4.1) mediante un documento Quarto (`.qmd`). 
+Este trabajo se ha realizado principalmente en Python (v3.10) utilizando entornos de Jupyter Notebook. El mapa de predicciones se realizó en R (v4.4.1) mediante un documento Quarto (`.qmd`). El análisis estructural se realizó utilizando el Colab oficial de AlphaFold, mientras que la comparativa estructural se llevó a cabo mediante TM-align.
+
+- AlphaFold Colab: https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb
+- TM-align: https://aideepmed.com/TM-align/
 
 El resto de paquetes necesarios para reproducir los análisis se encuentran especificados en los archivos:
 
 - ´requirements.txt` -> paquetes de Python
-- ´requirements_R.txt` -> paquete de R
+- ´requirements_R.txt` -> paquetes de R
 
 ---
 
