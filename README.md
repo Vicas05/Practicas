@@ -20,6 +20,7 @@ Las etapas realizadas en este proyecto fueron:
 ├───0_Tablas_iniciales
 │       Tabla_extremofilos.xlsx
 │       Tabla_PETasas.xlsx
+│
 ├───1_SSN
 │   ├───archivos_usados
 │   │       PETasas_totales_FASTA.fa
@@ -33,7 +34,8 @@ Las etapas realizadas en este proyecto fueron:
 │           cytoscape_network.cys    
 │           net_single.cx2           
 │           net_single.net           
-│           net_single.net.txt       
+│           net_single.net.txt
+│     
 ├───2_XGBoost
 │   ├───mapa_predicciones    
 │   │   ├───scripts
@@ -50,6 +52,7 @@ Las etapas realizadas en este proyecto fueron:
 │           PETases_kmers_uniprot.xlsx
 │           progreso_grid_search.csv
 │           uniprotkb_PETases.xlsx
+│
 └───3_Analisis_Estructural         # Resultados del análisis estructural en AlphaFold
     ├───Actinomadura_craniellae    # Candidato Termófilo
     │   └───resultados
