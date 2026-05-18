@@ -1,0 +1,10 @@
+pandas
+numpy
+networkx
+scikit-learn
+matplotlib
+xgboost
+scipy
+kennard-stone
+jupyter
+openpyxl
