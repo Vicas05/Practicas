@@ -1,5 +1,5 @@
 # Aplicación de modelos de lenguaje de proteínas (pLMs) para descifrar los dialectos moleculares de extremófilos
-Este repositorio contiene el proyecto realizado como parte del trabajo de la asignatura de Prácticas del Máster de Bioinformática y Biología Computacional en la Universidad Autónoma de Madrid, promoción del 2024. 
+Este repositorio contiene el proyecto realizado como parte del trabajo de la asignatura de Prácticas del Máster de Bioinformática y Biología Computacional en la Universidad Autónoma de Madrid, promoción del 2024. /p
 El objetivo principal del trabajo ha sido el desarrollo y validación de un modelo predictivo basado en secuencias proteicas, en el contexto del uso de modelos de lenguaje de proteínas (pLMs), para identificar posibles patrones moleculares asociados a secuencias que codifican enzimas procedentes de organismos extremófilos.
 Los pasos seguidos para el desarrollo de este proyecto han sido los siguientes:
 - Depuración e integración de datos
