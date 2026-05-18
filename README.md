@@ -50,7 +50,7 @@ Las etapas realizadas en este proyecto fueron:
 │           PETases_kmers_uniprot.xlsx
 │           progreso_grid_search.csv
 │           uniprotkb_PETases.xlsx
-└───3_AlphaFold
+└───3_Analisis_Estructural
     ├───Actinomadura_craniellae    # Candidato Termófilo
     │   └───resultados
     ├───Herbidospora_galbida       # Candidato Termófilo
@@ -64,6 +64,45 @@ Las etapas realizadas en este proyecto fueron:
             comp_prot2.png
             comp_prot3.png
  ```
-## Requisitos y entornos
-Este trabajo se ha realizado en Python (v3.10) utilizando entornos de Jupyter Notebook, con la excepción del mapa de preddiciones, que se realizó en R (v 4.4.1) en un archivo Quarto. El resto de paquetes necesarios para realizar el análisis se pueden encontrar en el archivo `requisitos.txt`
+
+## Herramientas y entornos
+Este trabajo se ha realizado principalmente en Python (v3.10) utilizando entornos de Jupyter Notebook. El mapa de preddiciones se realizó en R (v 4.4.1) mediante un documento Quarto (`.qmd`). 
+
+El resto de paquetes necesarios para reproducir los análisis se encuentran especificados en los archivos:
+
+- ´requirements.txt` -> paquetes de Python
+- ´requirements_R.txt` -> paquete de R
+
+---
+
+## Ejecutar el proyecto
+
+1. Clonar el repositorio
+
+```bash
+git clone URL
+```
+
+2. Instalar paquetes de Python
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Instalar paquetes de R
+
+```r
+install.packages(readLines("requirements_R.txt"))
+```
+
+4. Ejecutar los notebooks en orden:
+   - `1_SSN`
+         - SSN.ipynb
+         - ssnHeuristic.py
+   - `2_XGBoost`
+         - Kmer_PETases.ipynb
+         - XGBoost.ipynb
+         - mapa_predicciones.qmd
+
+--- 
 
