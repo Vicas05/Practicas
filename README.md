@@ -78,8 +78,8 @@ Este trabajo se ha realizado principalmente en Python (v3.10) utilizando entorno
 
 El resto de paquetes necesarios para reproducir los análisis se encuentran especificados en los archivos:
 
-- ´requirements.txt` -> paquetes de Python
-- ´requirements_R.txt` -> paquetes de R
+- ´requirements.txt` → paquetes de Python
+- ´requirements_R.txt` → paquetes de R
 
 ---
 
