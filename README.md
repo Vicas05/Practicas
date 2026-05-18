@@ -97,12 +97,12 @@ install.packages(readLines("requirements_R.txt"))
 
 4. Ejecutar los notebooks en orden:
    - `1_SSN`
-         - SSN.ipynb
-         - ssnHeuristic.py
+       - `SSN.ipynb`
+       - `ssnHeuristic.py`
    - `2_XGBoost`
-         - Kmer_PETases.ipynb
-         - XGBoost.ipynb
-         - mapa_predicciones.qmd
+       - `Kmer_PETases.ipynb`
+       - ´XGBoost.ipynb`
+       - `mapa_predicciones.qmd`
 
 --- 
 
