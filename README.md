@@ -65,6 +65,8 @@ Las etapas realizadas en este proyecto fueron:
             comp_prot3.png
  ```
 
+---
+
 ## Herramientas y entornos
 Este trabajo se ha realizado principalmente en Python (v3.10) utilizando entornos de Jupyter Notebook. El mapa de preddiciones se realizó en R (v 4.4.1) mediante un documento Quarto (`.qmd`). 
 
@@ -101,7 +103,7 @@ install.packages(readLines("requirements_R.txt"))
        - `ssnHeuristic.py`
    - `2_XGBoost`
        - `Kmer_PETases.ipynb`
-       - ´XGBoost.ipynb`
+       - `XGBoost.ipynb`
        - `mapa_predicciones.qmd`
 
 --- 
