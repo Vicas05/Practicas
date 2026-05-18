@@ -68,7 +68,7 @@ Las etapas realizadas en este proyecto fueron:
 ---
 
 ## Herramientas y entornos
-Este trabajo se ha realizado principalmente en Python (v3.10) utilizando entornos de Jupyter Notebook. El mapa de preddiciones se realizó en R (v 4.4.1) mediante un documento Quarto (`.qmd`). 
+Este trabajo se ha realizado principalmente en Python (v3.10) utilizando entornos de Jupyter Notebook. El mapa de predicciones se realizó en R (v4.4.1) mediante un documento Quarto (`.qmd`). 
 
 El resto de paquetes necesarios para reproducir los análisis se encuentran especificados en los archivos:
 
@@ -98,6 +98,7 @@ install.packages(readLines("requirements_R.txt"))
 ```
 
 4. Ejecutar los notebooks en orden:
+
    - `1_SSN`
        - `SSN.ipynb`
        - `ssnHeuristic.py`
