@@ -100,7 +100,8 @@ pip install -r requirements.txt
 3. Instalar paquetes de R
 
 ```r
-install.packages(readLines("requirements_R.txt"))
+packages <- readLines("requirements_R.txt")
+install.packages(packages)
 ```
 
 4. Ejecutar los notebooks en orden:
